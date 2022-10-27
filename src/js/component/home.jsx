@@ -6,23 +6,23 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	const [personajes, setPersonajes] = useState(null);
+	const [personajes, setPersonajes] = useState(null)
 
 	useEffect(() => {
-	  todosPersonajes(setPersonajes);
-	}, []);
+	  todosPersonajes(setPersonajes)
+	}, [])
   
 	return (
-	  <div>
-		{personajes != null
-		  ? personajes.map((personaje) => (
+	  <>
+		{personajes != null ? (
+			personajes.map(personaje => (
 			  <div key={personaje.id}>
-				<a href={"/personaje/${personajes.id"}>{personaje.name}</a>
+				<a href={'/personaje/${personaje.id}'}>{personaje.name}</a>
 				<img src={personaje.image} alt="" />
 			  </div>
 			))
-		  : "no hay personajes"}
-	  </div>
+		)  : ('no hay personajes')}
+	  </>
 	);
   }; 
 

@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inicio from "./src/components/Inicio";
-import Personaje from "./src/components/Personaje";
+import Home from "./component/home";
+import Personaje from "./component/Personaje";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Inicio></Inicio>}></Route>
+          <Route path="/home" element={<Home></Home>}></Route>
           <Route
             path="/personaje/:id"
             element={<Personaje></Personaje>}
