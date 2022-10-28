@@ -6,7 +6,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	const [personajes, setPersonajes] = useState(null)
+	const [personajes, setPersonajes] = useState(undefined)
 
 	useEffect(() => {
 	  todosPersonajes(setPersonajes)
@@ -15,7 +15,7 @@ const Home = () => {
 	return (
 	  <>
 	  <h2>Rick & Morty Characters</h2>	
-		{personajes != null ? (
+		{personajes != undefined ? (
 			personajes.map(personaje => (
 			  <div key={personaje.id}>
 				<a href={'/personaje/${personaje.id}'}>{personaje.name}</a>
