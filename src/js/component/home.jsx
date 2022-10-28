@@ -14,6 +14,7 @@ const Home = () => {
   
 	return (
 	  <>
+	  <h2>Rick & Morty Characters</h2>	
 		{personajes != null ? (
 			personajes.map(personaje => (
 			  <div key={personaje.id}>
