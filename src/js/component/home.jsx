@@ -11,7 +11,7 @@ const Home = () => {
 	return (
 	<div className="container">
             <p className="h3 text-center text-success "><b>Rick & Morty Characters</b></p>
-	  	<p className="h4 text-center text-danger">
+	  	<div className="h4 text-center text-danger">
 			{personajes != null ? (
 			personajes.map(personaje => (
 			  	<div key={personaje.id}>
@@ -20,7 +20,7 @@ const Home = () => {
 			  	</div>
 			))
 			)  : ('no hay personajes')}
-		</p>
+		</div>
 	</div>
 	);
   }; 
