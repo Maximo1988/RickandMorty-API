@@ -9,20 +9,18 @@ const Home = () => {
 	}, [])
   
 	return (
-	<div ClassName="container">
-	  <div Classname="d-flex flex-row">
-            <p class="h3 text-success ms-2"><b>Rick & Morty Characters</b></p>
-	  	<ul>
-				{personajes != null ? (
-				personajes.map(personaje => (
-			  		<div key={personaje.id}>
-						<a href="#">{personaje.name}</a>
-						<img src={personaje.image} alt=""/>
-			  		</div>
-				))
-				)  : ('no hay personajes')}
-		</ul>
-	  </div>
+	<div className="container">
+            <p className="h3 text-center text-success "><b>Rick & Morty Characters</b></p>
+	  	<p className="h4 text-center text-danger">
+			{personajes != null ? (
+			personajes.map(personaje => (
+			  	<div key={personaje.id}>
+					<p><b>{personaje.name}</b></p>
+  					<img className="rounded mx-auto d-block" src={personaje.image} alt="..."/>
+			  	</div>
+			))
+			)  : ('no hay personajes')}
+		</p>
 	</div>
 	);
   }; 
