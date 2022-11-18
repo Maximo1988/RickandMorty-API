@@ -6,8 +6,8 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/Inicio.jsx";
-import Layout from "./Layout";
+import Inicio from "./component/inicio.jsx";
+import Layout from "./layout";
 
 //render your react application
 ReactDOM.render(<Layout />, document.querySelector("#app"));

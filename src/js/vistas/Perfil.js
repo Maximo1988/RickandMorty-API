@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Context } from "../almacen/appContext";
+import { Context } from "../almacen/AppContext";
 
 const Profilecharacter = ({ item, uid }) => {
   const { actions, store } = useContext(Context);
@@ -14,10 +14,15 @@ const Profilecharacter = ({ item, uid }) => {
       />
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
+        <p className="card-text">
+          <li>{`Location: ${item.location}`}</li>
+          <li>{`Episode: ${item.episode}`}</li>
+          <li>{`Status: ${item.status}`}</li>
+        </p>
         <div className="row">
           <div className="col-8">
             <Link to={`/Unicopsj/${uid}`} className="btn btn-primary">
-              Learn more!
+              Descripción
             </Link>
           </div>
           <div className="col-3">

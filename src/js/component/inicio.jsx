@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
+import  {Context} from "../almacen/AppContext";
 import Profilecharacter from "../vistas/Perfil";
 
 
@@ -13,7 +12,7 @@ const Inicio = (props) => {
 			<div className="col-8 bg-light">
 		  		<ul>
 			  		<li>
-						<h3 className="mt-3 text-danger">Personajes</h3>
+						<h3 className="mt-3 text-success">Personajes</h3>
 							<div className="row flex-row flex-nowrap MyScroll">
 				  				{store.personajes.map((itempersonaje, i) => {
 				  					return (

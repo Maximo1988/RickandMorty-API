@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Profilecharacter from "./vistas/Perfil";
 import { Unicopersonaje } from "./vistas/Unicopsj";
 import injectContext from "./almacen/AppContext";
+import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import Inicio from "./component/inicio";
+import Inicio from "./component/inicio.jsx";
 
 
 
 const Layout = () => {
-  const basename = process.env.BASENAME || "";
 
   return (
     <div>
-      <BrowserRouter basename={basename}>
-            <Switch>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
 
-              <Route exact path="/"><Inicio></Inicio></Route>
+              <Route exact path="/" element={<Inicio></Inicio>}></Route>
 
-              <Route exact path="/vistas/Perfil"><Profilecharacter></Profilecharacter></Route>
+              <Route exact path="/vistas/Perfil" element={<Profilecharacter></Profilecharacter>}></Route>
 
-              <Route exact path="/vistas/Unicopsj/:uid"><Unicopersonaje></Unicopersonaje></Route>
+              <Route exact path="/vistas/Unicopsj/:uid" element={<Unicopersonaje></Unicopersonaje>}></Route>
 
-            </Switch>
-
-          <Footer />
-
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

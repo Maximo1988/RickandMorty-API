@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../almacen/AppContext";
 
@@ -21,9 +20,9 @@ export const Unicopersonaje = (props) => {
         </div>
         <div className="col-lg-8 col-8 text-center">
           <h1>
-            {store.personaje.properties && store.personaje.properties.name}
+            {store.personaje.info && store.personaje.info.name}
           </h1>
-          <p>{store.personaje.description}</p>
+          <p>{store.personaje.info}</p>
         </div>
       </div>
       <hr className="text-danger" />
@@ -33,42 +32,32 @@ export const Unicopersonaje = (props) => {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Birth Year</th>
-                <th>Gender</th>
-                <th>Height</th>
-                <th>Skin Color</th>
-                <th>Eye Color</th>
+                <th>Location</th>
+                <th>Episode</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 {store.personaje?.uid === params.uid ? (
                   <td>
-                    {store.personaje.properties &&
-                      store.personaje.properties.name}
+                    {store.personaje.info &&
+                      store.personaje.info.name}
                   </td>
                 ) : (
                   <td>Cargando...</td>
                 )}
                 <td>
-                  {store.personaje.properties &&
-                    store.personaje.properties.birth_year}
+                  {store.personaje.info &&
+                    store.personaje.info.location}
                 </td>
                 <td>
-                  {store.personaje.properties &&
-                    store.personaje.properties.gender}
+                  {store.personaje.info &&
+                    store.personaje.info.episode}
                 </td>
                 <td>
-                  {store.personaje.properties &&
-                    store.personaje.properties.height}
-                </td>
-                <td>
-                  {store.personaje.properties &&
-                    store.personaje.properties.skin_color}
-                </td>
-                <td>
-                  {store.personaje.properties &&
-                    store.personaje.properties.eye_color}
+                  {store.personaje.info &&
+                    store.personaje.info.status}
                 </td>
               </tr>
             </tbody>
