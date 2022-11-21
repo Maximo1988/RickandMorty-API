@@ -22,7 +22,7 @@ const Layout = () => {
 
               <Route exact path="/vistas/Perfil" element={<Profilecharacter></Profilecharacter>}></Route>
 
-              <Route exact path="/vistas/Unicopsj/:uid" element={<Unicopersonaje></Unicopersonaje>}></Route>
+              <Route exact path="/Unicopsj/:uid" element={<Unicopersonaje></Unicopersonaje>}></Route>
 
         </Routes>
         <Footer />

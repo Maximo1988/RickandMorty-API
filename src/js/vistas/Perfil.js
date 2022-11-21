@@ -8,17 +8,16 @@ const Profilecharacter = ({ item, uid }) => {
   return (
     <div className="card mb-3" style={{ maxWidth: "540px" }}>
       <img
-        src={`https://rickandmortyapi.com/api/character/${uid}.jpg`}
+        src={item.image}
         className="card-img-top"
         alt={item.name}
       />
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
-        <p className="card-text">
-          <li>{`Location: ${item.location}`}</li>
-          <li>{`Episode: ${item.episode}`}</li>
-          <li>{`Status: ${item.status}`}</li>
-        </p>
+        <div className="card-text">
+          <p>{`Location: ${item.location.name}`}</p>
+          <p>{`Status: ${item.species}`}</p>
+        </div>
         <div className="row">
           <div className="col-8">
             <Link to={`/Unicopsj/${uid}`} className="btn btn-primary">

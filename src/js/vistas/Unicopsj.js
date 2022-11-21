@@ -6,6 +6,7 @@ export const Unicopersonaje = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   useEffect(() => {
+
     actions.getCharacter(params.uid);
   }, []);
   return (
@@ -13,16 +14,16 @@ export const Unicopersonaje = (props) => {
       <div className="row">
         <div className="col-lg-4 col-4">
           <img
-            src={`https://rickandmortyapi.com/api/character/${params.uid}.jpg`}
+            src= {store.personaje && store.personaje.image}
             alt=""
             style={{ width: "100%" }}
           />
         </div>
         <div className="col-lg-8 col-8 text-center">
           <h1>
-            {store.personaje.info && store.personaje.info.name}
+            {store.personaje && store.personaje.name}
           </h1>
-          <p>{store.personaje.info}</p>
+          {/* <p>{store.personaje.name}</p> */}
         </div>
       </div>
       <hr className="text-danger" />
@@ -33,7 +34,7 @@ export const Unicopersonaje = (props) => {
               <tr>
                 <th>Name</th>
                 <th>Location</th>
-                <th>Episode</th>
+                <th>Episodes</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -41,23 +42,30 @@ export const Unicopersonaje = (props) => {
               <tr>
                 {store.personaje?.uid === params.uid ? (
                   <td>
-                    {store.personaje.info &&
-                      store.personaje.info.name}
+                    {store.personaje &&
+                      store.personaje.name}
                   </td>
                 ) : (
-                  <td>Cargando...</td>
+                  <td>{store.personaje &&
+                    store.personaje.name}</td>
                 )}
                 <td>
-                  {store.personaje.info &&
-                    store.personaje.info.location}
+                  {store.personaje && store.personaje.location &&
+                    store.personaje.location.name}
                 </td>
                 <td>
-                  {store.personaje.info &&
-                    store.personaje.info.episode}
+                  {store.personaje &&
+                    store.personaje.episode}
                 </td>
                 <td>
-                  {store.personaje.info &&
-                    store.personaje.info.status}
+                  <td>
+                    <td>
+                    </td>
+                  </td>
+                </td>
+                <td>
+                  {store.personaje &&
+                    store.personaje.status}
                 </td>
               </tr>
             </tbody>

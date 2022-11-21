@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       store: {
 
         personajes: [],
-        personaje: [],
+        personaje: {},
         locaciones: [],
         locacion: [],
         episodios: [],
@@ -19,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           fetch("https://rickandmortyapi.com/api/character/")
             .then((res) => res.json())
             .then((response) => {
-              setStore({personaje: response.results });
+              setStore({personajes: response.results });
             })
             .catch(console.error());
         },
@@ -53,14 +53,13 @@ const getState = ({ getStore, getActions, setStore }) => {
             (item, index) => index !== i)})
         },
 
-        },
         
         getCharacter: id => {
                   const store = getStore();
                   fetch("https://rickandmortyapi.com/api/character/" + id)
                       .then(res => res.json())
                       .then(data => {
-                          setStore({personaje: data.results });
+                          setStore({personaje: data });
                       })
                       .catch(err => err);
               },
@@ -82,6 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                       })
                       .catch(err => err);
               },
+            }
       };
     };
   
