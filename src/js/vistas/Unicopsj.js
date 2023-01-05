@@ -58,12 +58,6 @@ export const Unicopersonaje = (props) => {
                     store.personaje.episode}
                 </td>
                 <td>
-                  <td>
-                    <td>
-                    </td>
-                  </td>
-                </td>
-                <td>
                   {store.personaje &&
                     store.personaje.status}
                 </td>
