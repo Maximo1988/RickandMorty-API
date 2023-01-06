@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Context } from "../almacen/AppContext";
+import { Context } from "../store/AppContext";
 
 export const Unicopersonaje = (props) => {
   const { store, actions } = useContext(Context);
@@ -23,7 +23,6 @@ export const Unicopersonaje = (props) => {
           <h1>
             {store.personaje && store.personaje.name}
           </h1>
-          {/* <p>{store.personaje.name}</p> */}
         </div>
       </div>
       <hr className="text-danger" />

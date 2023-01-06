@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Context } from "../almacen/AppContext";
+import { Context } from "../store/AppContext";
 
 const Profilecharacter = ({ item, uid }) => {
   const { actions, store } = useContext(Context);

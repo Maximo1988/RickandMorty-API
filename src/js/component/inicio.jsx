@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import  {Context} from "../almacen/AppContext";
+import  {Context} from "../store/AppContext";
 import Profilecharacter from "../vistas/Perfil";
 
 

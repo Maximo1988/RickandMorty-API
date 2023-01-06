@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../almacen/AppContext";
+import { Context } from "../store/AppContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);

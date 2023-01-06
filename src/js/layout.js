@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Profilecharacter from "./vistas/Perfil";
 import { Unicopersonaje } from "./vistas/Unicopsj";
-import injectContext from "./almacen/AppContext";
+import injectContext from "./store/AppContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Inicio from "./component/inicio.jsx";
